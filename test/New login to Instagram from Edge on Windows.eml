@@ -1,0 +1,255 @@
+Delivered-To: mohamedsakeen09@gmail.com
+Received: by 2002:a05:7412:7403:b0:1e7:a3ac:88aa with SMTP id fz3csp9794864rdb;
+        Fri, 18 Sep 2026 11:08:09 -0700 (PDT)
+X-Received: by 2002:a05:6820:160d:b0:6b1:535a:eb8 with SMTP id 006d021491bc7-6ca9a132f99mr3403498eaf.2.1789754889097;
+        Fri, 18 Sep 2026 11:08:09 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1789754889; cv=none;
+        d=google.com; s=arc-20260327;
+        b=OvBDn0n3nPHt6jIBlZPS/41iONGK00c4kqIEij0poFNVe8CrGX45stQ5izpGWlfvJ5
+         K85BaH0RsS7X1TosnS1tZcn6COFiBVcSagN4eEjz4qFWv4EKrwLETEZh/jjtZTbKe+9k
+         ZWvRlJIzUlCdfIC+xL7HPw5jXnrM4xcTRRO4ZlBLMKov23vsj3ERd7sSla3h4RcN/55v
+         u/qLeZulmUwYnC9tOm3y++zX//pFQjwKhFpbuitQrPJ6/ORgKd1OQ4xBMsqaYrocuXgG
+         ZlrfkXfklExT8ERGgCWPTWUHAohvKX7b3+1PUZMHswLm81+Dt/LKJp6mxaQ3Ja6RjdmK
+         UQRg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20260327;
+        h=message-id:content-transfer-encoding:mime-version:feedback-id
+         :bimi-selector:list-unsubscribe-post:list-unsubscribe:errors-to
+         :reply-to:from:subject:to:date:dkim-signature;
+        bh=o04sbcuS4yWDBVZe58+VjOBDkw61uW7wx2uxKDF0pnY=;
+        fh=oLrprmiMoxnW9RWLmoz3wnAQgHpJ8UU5jPZ9zfN0jCI=;
+        b=s+dNzQZA6AfPxelP6GZzEyBzAON5dLXXECWu2o587+qrrKZWgeQ3472kVKgMUwz90A
+         4hYwwwZzDCZZIDns8yJxUDgobSDHerLAg+vR9l5RnMuZ6z/0+unVsbDgnSv8sunSqABF
+         EH8DMgPEVyrjcp9i5b6Sh/em6qUR8ZiGt/8nAwC3dKHBVXo4DNGXOiOMtXApcdB3MW6n
+         Kb/zjA8trkk/wQeyxTBerHtJS3WP6Nkl3pKsAEHJlors/BoCe22dNf8XNeQesvu/4tuv
+         cONg2PMsoR2OgD2/Z+4x8fD85/boAz65LstCvn3RFYaGFwJfbDxcDPrCwrMCvNscXGPf
+         kOsg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mail.instagram.com header.s=s1024-2013-q3 header.b=WBfVd7WL;
+       spf=pass (google.com: domain of security@mail.instagram.com designates 66.220.144.150 as permitted sender) smtp.mailfrom=security@mail.instagram.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=mail.instagram.com
+Return-Path: <security@mail.instagram.com>
+Received: from 66-220-144-150.mail-mail.facebook.com (66-220-144-150.mail-mail.facebook.com. [66.220.144.150])
+        by mx.google.com with ESMTPS id 006d021491bc7-6cd35c2136fsi757476eaf.15.2026.09.18.11.08.08
+        for <mohamedsakeen09@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Fri, 18 Sep 2026 11:08:09 -0700 (PDT)
+Received-SPF: pass (google.com: domain of security@mail.instagram.com designates 66.220.144.150 as permitted sender) client-ip=66.220.144.150;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mail.instagram.com header.s=s1024-2013-q3 header.b=WBfVd7WL;
+       spf=pass (google.com: domain of security@mail.instagram.com designates 66.220.144.150 as permitted sender) smtp.mailfrom=security@mail.instagram.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=mail.instagram.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=mail.instagram.com;
+	s=s1024-2013-q3; t=1789754888;
+	bh=o04sbcuS4yWDBVZe58+VjOBDkw61uW7wx2uxKDF0pnY=;
+	h=Date:To:Subject:From:MIME-Version:Content-Type;
+	b=WBfVd7WLmu3KvvX+8iivzlc5U/4Oqyq9RXLd6qPdMyC/VDAXGCNlzNtxfuNna8Dzu
+	 +dfnt7Mw+knpKqtf3UCl9YBAyeCy5bSgGtHYVBz/33m0Vduc+j8/8XZOEMPZmcwZz5
+	 7HjaF4SmDy4thMPjmpGSGIycB1t4Mpth/C4jufjI=
+X-Facebook: from 2803:6082:c128:a807:9e76:1f46:1548:a00 ([MTI3LjAuMC4x]) 
+	by thrift.facebook.com with HTTPS (ZuckMail);
+Date: Fri, 18 Sep 2026 11:08:08 -0700
+To: mohamedsakeen09@gmail.com
+Subject: New login to Instagram from Edge on Windows
+X-Priority: 3
+X-Mailer: ZuckMail [version 1.00]
+Return-Path: security@mail.instagram.com
+From: "Instagram" <security@mail.instagram.com>
+Reply-to: Instagram <security@mail.instagram.com>
+Errors-To: security@mail.instagram.com
+X-Facebook-Notify: ig_suspicious_login; mailid=U2U65bc57eba1762G24bc2ed4eadcfdG65bc5c8501a34G9e4
+List-Unsubscribe: <https://www.instagram.com/email/oneclick/unsubscribe?identifier=Aflj6gcJ-5IspcgZgu7lGdXNGNK7MTvNkB7PWJcasX7dewg4d7Vzi_J-VivqRvH2fUxf2Wtss6DFI2ujpo16d0ZZb0seokzgdEoLKI2UTo_elBmUaYJ33vHYh2GBgxp9OjEdVh0qbshWBgsIMf2Bn0ORZ81M3IxXD9ZtJf185YdQreDCTyD_eluXZzvRZHyYmjSXDsiDhUEKCeHqg4lkA4OQtlXpxTZ7CyUQUoNNFoy0fzASiQBnLWRwkzxIB0ubu9rzdNHfcrX2k1RoP2FrNd_jwxYq-EAn2x1QlD1XjBFY0jhTGSh14nyC2La8nP4O8mdQ1ji8mhW5MY6GBhXOLqquG7jGvCKLyo-1yp9LPaPYQEGOO6S-UEw8DkenLXWg02OzCTmaTsCNY2yUL-x258AjnQKuCckzB6_fttHibXt30VFXQDXT6MnMQPivK7aBY1oO68e3F4rB-AVgMC9iHcjcIWO8YNVTQMpDJiOFMT-N3neXDD1d>
+List-Unsubscribe-Post: List-Unsubscribe=One-Click
+X-FB-Internal-Notiftype: ig_suspicious_login
+BIMI-Selector: v=BIMI1; s=fb2025q1v1;
+Feedback-ID: ig_suspicious_login:Facebook
+X-FB-Internal-MID: U2U65bc57eba1762G24bc2ed4eadcfdG65bc5c8501a34G9e4
+X-FB-Internal-RecipID: 8488262909
+X-FACEBOOK-PRIORITY: 0
+X-Auto-Response-Suppress: All
+MIME-Version: 1.0
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="UTF-8"
+Message-ID: <d47cf419-4be0-44c8-bec4-08044062dae5@mail.instagram.com>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional =
+//EN"><html><head><title>Facebook</title><meta http-equiv=3D"Content-Type" =
+content=3D"text/html; charset=3Dutf-8" /><style nonce=3D"I4DOmjxK">@media =
+all and (max-width: 480px){*[class].ib_t{min-width:100%!important}*[class]=
+.ib_row{display:block!important}*[class].ib_ext{display:block!important;pa=
+dding:10px 0 5px;vertical-align:top!important;width:100%!important}*[class=
+].ib_img,*[class].ib_mid{vertical-align:top!important}*[class].mb_blk{disp=
+lay:block!important;padding-bottom:10px;width:100%!important}*[class].mb_h=
+ide{display:none!important}*[class].mb_inl{display:inline!important}*[clas=
+s].d_mb_flex{display:block!important}}.d_mb_show{display:none}.d_mb_flex{d=
+isplay:flex}@media only screen and (max-device-width: =
+480px){.d_mb_hide{display:none!important}.d_mb_show,.d_mb_flex{display:blo=
+ck!important}}.mb_text h1,.mb_text h2,.mb_text h3,.mb_text h4,.mb_text =
+h5,.mb_text h6{line-height:normal}.mb_work_text =
+h1{font-size:18px;line-height:normal;margin-top:4px}.mb_work_text =
+h2,.mb_work_text =
+h3{font-size:16px;line-height:normal;margin-top:4px}.mb_work_text =
+h4,.mb_work_text h5,.mb_work_text =
+h6{font-size:14px;line-height:normal}.mb_work_text =
+a{color:#1270e9}.mb_work_text p{margin-top:4px}
+</style></head><body style=3D"margin:0;padding:0;" dir=3D"ltr" =
+bgcolor=3D"#ffffff"><table border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"0" align=3D"center" id=3D"email_table" =
+style=3D"border-collapse:collapse;"><tr><td id=3D"email_content" =
+style=3D"font-family:Helvetica Neue,Helvetica,Lucida =
+Grande,tahoma,verdana,arial,sans-serif;background:#ffffff;"><table =
+border=3D"0" width=3D"100%" cellspacing=3D"0" cellpadding=3D"0" =
+style=3D"border-collapse:collapse;"><tr style=3D""><td height=3D"20" =
+style=3D"line-height:20px;" colspan=3D"3">&nbsp;</td></tr><tr><td =
+height=3D"1" colspan=3D"3" style=3D"line-height:1px;"></td></tr><tr><td =
+style=3D""><table border=3D"0" width=3D"100%" cellspacing=3D"0" =
+cellpadding=3D"0" style=3D"border-collapse:collapse;text-align:center;html=
+_width:100%;width:100%;"><tr><td width=3D"16px" =
+style=3D"width:16px;"></td><td =
+style=3D"line-height:0px;max-width:600px;padding:0 0 15px 0;"><table =
+border=3D"0" cellspacing=3D"0" cellpadding=3D"0" =
+style=3D"border-collapse:collapse;"><tr><td =
+style=3D"width:100%;text-align:left;height:33px;"><a href=3D"https://www.i=
+nstagram.com/_n/mainfeed?utm_campaign=3Dig_suspicious_login&amp;utm_medium=
+=3Demail&amp;target_user_id=3D8488262909&amp;utm_source=3Dinstagram&amp;nd=
+id=3D65bc57eba1762G24bc2ed4eadcfdG65bc5c8501a35G9e4" =
+style=3D"color:#1b74e4;text-decoration:none;"><img height=3D"30" =
+src=3D"https://static.xx.fbcdn.net/rsrc.php/v4/yb/r/QTa-gpOyYBa.png" =
+style=3D"border:0;" /></a></td><td =
+style=3D"line-height:18px;min-width:60px;text-align:right;"><a =
+href=3D"https://www.instagram.com/_n/user?utm_campaign=3Dig_suspicious_log=
+in&amp;utm_medium=3Demail&amp;target_user_id=3D8488262909&amp;utm_source=
+=3Dinstagram&amp;username=3Dmohamed_sakeen___&amp;ndid=3D65bc57eba1762G24b=
+c2ed4eadcfdG65bc5c8501a35G9e4" =
+style=3D"color:#1b74e4;text-decoration:none;"><img width=3D"30" =
+src=3D"https://scontent.xx.fbcdn.net/v/t51.2885-15/352437647_9144878796225=
+49_5074277067284175935_n.jpg?_nc_cat=3D109&amp;ccb=3D1-7&amp;_nc_sid=3D7d2=
+01b&amp;_nc_ohc=3DL4b-n9yxfE0Q7kNvwETYKN2&amp;_nc_oc=3DAdqhabqYeJKXTjbkyNp=
+FWNNLq1OJvKcGbaKDaYCmYdJkttMPDLZjJm9jgh02V7g-TPlxXEVFjsrB7TuW4df5X8iU&amp;=
+_nc_ad=3Dz-m&amp;_nc_cid=3D0&amp;_nc_zt=3D23&amp;_nc_ht=3Dscontent.xx&amp;=
+oh=3D00_AQIUnYRQ7Og1oyLB7fOxi04HXg1iWFjZXuxprI2tdgCuRw&amp;oe=3D6AB35416" =
+height=3D"30" =
+style=3D"border:0px;border-radius:18px;vertical-align:middle;" =
+/></a></td></tr></table></td><td width=3D"16px" =
+style=3D"width:16px;"></td></tr></table></td></tr><tr><td =
+style=3D""><table border=3D"0" width=3D"430" cellspacing=3D"0" =
+cellpadding=3D"0" style=3D"border-collapse:collapse;margin:0 auto 0 =
+auto;"><tr><td style=3D""><table border=3D"0" width=3D"430px" =
+cellspacing=3D"0" cellpadding=3D"0" align=3D"center" =
+style=3D"border-collapse:collapse;margin:0 auto 0 =
+auto;text-align:center;"><tr style=3D""><td height=3D"16" =
+style=3D"line-height:16px;">&nbsp;</td></tr><tr><table border=3D"0" =
+width=3D"300px" cellspacing=3D"0" cellpadding=3D"0" align=3D"center" =
+style=3D"border-collapse:collapse;text-align:center;margin:0 auto 0 =
+auto;"><td style=3D"width:300px;padding:0;margin:0;text-align:center;color=
+:#262626;font-size:18px;font-family:Helvetica =
+Neue,Helvetica,Roboto,Arial,sans-serif;">We noticed a new login, =
+mohamed_sakeen___</td></table></tr><tr style=3D""><td height=3D"4" =
+style=3D"line-height:4px;">&nbsp;</td></tr><tr><table border=3D"0" =
+width=3D"300px" cellspacing=3D"0" cellpadding=3D"0" align=3D"center" =
+style=3D"border-collapse:collapse;text-align:center;margin:0 auto 0 =
+auto;"><td style=3D"width:300px;padding:0;margin:0;text-align:center;color=
+:#999999;font-size:14px;font-family:Helvetica =
+Neue,Helvetica,Roboto,Arial,sans-serif;">We noticed a login from a device =
+you don&#039;t usually use.</td></table></tr><tr style=3D""><td =
+height=3D"16" =
+style=3D"line-height:16px;">&nbsp;</td></tr></table></td></tr><tr><td =
+style=3D""><table border=3D"0" width=3D"430px" cellspacing=3D"0" =
+cellpadding=3D"0" align=3D"center" =
+style=3D"border-collapse:collapse;margin:0 auto 0 =
+auto;text-align:center;width:430px;"><tr style=3D""><td height=3D"16" =
+style=3D"line-height:16px;">&nbsp;</td></tr><td align=3D"center" =
+style=3D""><img width=3D"76" =
+src=3D"https://static.xx.fbcdn.net/rsrc.php/v4/yV/r/XLwtfbfEatG.png" =
+height=3D"76" style=3D"border:0;" /></td><tr style=3D""><td height=3D"16" =
+style=3D"line-height:16px;">&nbsp;</td></tr></table></td></tr><tr><td =
+style=3D""><table border=3D"0" width=3D"430px" cellspacing=3D"0" =
+cellpadding=3D"0" align=3D"center" =
+style=3D"border-collapse:collapse;margin:0 auto 0 =
+auto;text-align:center;width:430px;"><tr><table border=3D"0" =
+width=3D"300px" cellspacing=3D"0" cellpadding=3D"0" align=3D"center" =
+style=3D"border-collapse:collapse;text-align:center;margin:0 auto 0 =
+auto;"><td align=3D"center" style=3D"width:300px;padding:0;margin:0;text-a=
+lign:center;color:#262626;font-size:16px;font-family:Helvetica =
+Neue,Helvetica,Roboto,Arial,sans-serif;">Windows =C2=B7 Edge =C2=B7 =
+Chennai, India</td></table></tr><tr style=3D""><td height=3D"4" =
+style=3D"line-height:4px;">&nbsp;</td></tr><tr><table border=3D"0" =
+width=3D"300px" cellspacing=3D"0" cellpadding=3D"0" align=3D"center" =
+style=3D"border-collapse:collapse;text-align:center;margin:0 auto 0 =
+auto;"><td align=3D"center" style=3D"width:300px;padding:0;margin:0;text-a=
+lign:center;color:#999999;font-size:14px;font-family:Helvetica =
+Neue,Helvetica,Roboto,Arial,sans-serif;">September 18 at 11:08 AM =
+(PDT)</td></table></tr></table></td></tr><tr><td style=3D""><table =
+border=3D"0" width=3D"430px" cellspacing=3D"0" cellpadding=3D"0" =
+align=3D"center" style=3D"border-collapse:collapse;margin:0 auto 0 =
+auto;text-align:center;width:430px;"><tr style=3D""><td height=3D"16" =
+style=3D"line-height:16px;">&nbsp;</td></tr><td style=3D"border-top:solid =
+1px #DBDBDB;"></td><tr style=3D""><td height=3D"16" =
+style=3D"line-height:16px;">&nbsp;</td></tr></table></td></tr><tr><td =
+style=3D""><table border=3D"0" width=3D"430px" cellspacing=3D"0" =
+cellpadding=3D"0" align=3D"center" =
+style=3D"border-collapse:collapse;margin:0 auto 0 =
+auto;text-align:center;width:430px;"><tr style=3D""><td height=3D"24" =
+style=3D"line-height:24px;">&nbsp;</td></tr><tr><table border=3D"0" =
+width=3D"300px" cellspacing=3D"0" cellpadding=3D"0" align=3D"center" =
+style=3D"border-collapse:collapse;text-align:center;margin:0 auto 0 =
+auto;"><td style=3D"width:300px;padding:0;margin:0;text-align:center;color=
+:#999999;font-size:14px;font-family:Helvetica =
+Neue,Helvetica,Roboto,Arial,sans-serif;">If this was you, you =
+won=E2=80=99t be able to access certain security and account settings for =
+a few days. You can still access these settings from a device =
+you=E2=80=99ve logged in with in the =
+past.</td></table></tr></table></td></tr><tr><td style=3D""><table =
+border=3D"0" width=3D"430px" cellspacing=3D"0" cellpadding=3D"0" =
+align=3D"center" style=3D"border-collapse:collapse;margin:0 auto 0 =
+auto;text-align:center;width:430px;"><tr style=3D""><td height=3D"16" =
+style=3D"line-height:16px;">&nbsp;</td></tr><tr><table border=3D"0" =
+width=3D"300px" cellspacing=3D"0" cellpadding=3D"0" align=3D"center" =
+style=3D"border-collapse:collapse;text-align:center;margin:0 auto 0 =
+auto;"><td style=3D"width:300px;padding:0;margin:0;text-align:center;color=
+:#999999;font-size:14px;font-family:Helvetica =
+Neue,Helvetica,Roboto,Arial,sans-serif;">If this wasn=E2=80=99t you, you =
+can <a href=3D"https://instagram.com/profile_change_disavow?re=3DbW9oYW1lZ=
+HNha2VlbjA5QGdtYWlsLmNvbQ&amp;ce=3DbG9naW5fb25fbmV3X2RldmljZQ&amp;token=3D=
+fzXg3kLC&amp;uid=3D3wdoxkt" =
+style=3D"color:#1b74e4;text-decoration:none;">secure your account</a> from =
+a device you=E2=80=99ve logged in with in the past. <a =
+href=3D"https://help.instagram.com/584809789886474" =
+style=3D"color:#1b74e4;text-decoration:none;">Learn =
+more</a></td></table></tr><tr style=3D""><td height=3D"16" =
+style=3D"line-height:16px;">&nbsp;</td></tr></table></td></tr></table></td=
+></tr><tr><td style=3D""><table border=3D"0" cellspacing=3D"0" =
+cellpadding=3D"0" style=3D"border-collapse:collapse;margin:0 auto 0 =
+auto;width:100%;max-width:600px;"><tr style=3D""><td height=3D"4" =
+style=3D"line-height:4px;" colspan=3D"3">&nbsp;</td></tr><tr><td =
+width=3D"15px" style=3D"width:15px;"></td><td width=3D"20" =
+style=3D"display:block;width:20px;">&nbsp;&nbsp;&nbsp;</td><td =
+style=3D"text-align:center;"><div =
+style=3D"padding-top:10px;display:flex;"><div style=3D"margin:auto;"><img =
+width=3D"52" alt=3D"Meta" =
+src=3D"https://static.xx.fbcdn.net/rsrc.php/v4/yW/r/EK_fa82Ffa5.png" =
+height=3D"26" style=3D"border:0;" /></div><br /></div><div =
+style=3D"height:10px;"></div><div =
+style=3D"color:#abadae;font-size:11px;margin:0 auto 5px auto;">=C2=A9 =
+Instagram. Meta Platforms, Inc., 1601 Willow Road, Menlo Park, CA 94025<br =
+/></div><div style=3D"color:#abadae;font-size:11px;margin:0 auto 5px =
+auto;">This message was sent to <a style=3D"color:rgb(151, 151, =
+151);text-decoration:underline;max-width:600px;">mohamedsakeen09&#064;gmai=
+l.com</a> and intended for mohamed_sakeen___. Not your profile? <a =
+href=3D"https://instagram.com/accounts/remove/revoke_wrong_email/?uidb36=
+=3D3wdoxkt&amp;token=3D78v-a4cb227abd3adf03644d8218b436d1e4&amp;nonce=3DgX=
+dGcSrW&amp;encoded_email=3DbW9oYW1lZHNha2VlbjA5QGdtYWlsLmNvbQ" =
+style=3D"color:rgb(151, 151, =
+151);text-decoration:underline;max-width:600px;">Remove your email</a> =
+from this account.<br /></div></td><td width=3D"20" =
+style=3D"display:block;width:20px;">&nbsp;&nbsp;&nbsp;</td><td =
+width=3D"15px" style=3D"width:15px;"></td></tr><tr style=3D""><td =
+height=3D"32" style=3D"line-height:32px;" =
+colspan=3D"3">&nbsp;</td></tr></table></td></tr><tr style=3D""><td =
+height=3D"20" style=3D"line-height:20px;" =
+colspan=3D"3">&nbsp;</td></tr></table><span style=3D""><img =
+src=3D"https://www.facebook.com/email_open_log_pic.php?mid=3D65bc57eba1762=
+G24bc2ed4eadcfdG65bc5c8501a35G9e4" =
+style=3D"border:0;width:1px;height:1px;" =
+/></span></td></tr></table></body></html>
+

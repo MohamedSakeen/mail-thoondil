@@ -1,0 +1,31 @@
+# Authentication Rules
+# These rules check SPF, DKIM, and DMARC authentication results.
+
+rules:
+  - id: AUTH-Y001
+    category: authentication
+    severity: 0.7
+    risk_contribution: 10
+    condition: "authentication.dmarc_fail"
+    explanation: "DMARC authentication failed."
+
+  - id: AUTH-Y002
+    category: authentication
+    severity: 0.6
+    risk_contribution: 8
+    condition: "authentication.spf_fail"
+    explanation: "SPF authentication failed."
+
+  - id: AUTH-Y003
+    category: authentication
+    severity: 0.6
+    risk_contribution: 8
+    condition: "authentication.dkim_fail"
+    explanation: "DKIM authentication failed."
+
+  - id: AUTH-Y004
+    category: authentication
+    severity: 0.95
+    risk_contribution: 5
+    condition: "authentication.spf_fail == true"
+    explanation: "All authentication checks failed (combined signal)."

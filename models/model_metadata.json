@@ -1,0 +1,82 @@
+{
+  "version": "xgboost-v2-multi",
+  "model_type": "XGBClassifier",
+  "n_samples": 198446,
+  "n_features": 10024,
+  "n_tfidf_features": 10000,
+  "n_engineered_features": 24,
+  "test_size": 0.2,
+  "accuracy": 0.9776,
+  "precision": 0.9716,
+  "recall": 0.9839,
+  "f1": 0.9777,
+  "roc_auc": 0.9976,
+  "cv_f1_mean": 0.9705,
+  "cv_f1_std": 0.0011,
+  "confusion_matrix": [
+    [
+      19275,
+      570
+    ],
+    [
+      319,
+      19526
+    ]
+  ],
+  "feature_names": [
+    "word_count",
+    "uppercase_ratio",
+    "digit_ratio",
+    "avg_word_length",
+    "sentence_count",
+    "url_count",
+    "url_has_ip",
+    "url_has_punycode",
+    "url_has_shortener",
+    "url_has_at",
+    "url_has_https",
+    "url_avg_length",
+    "url_suspicious_keywords",
+    "domain_length",
+    "domain_digit_ratio",
+    "domain_hyphen_count",
+    "local_is_numeric",
+    "urgency_score",
+    "credential_request_score",
+    "financial_request_score",
+    "threat_score",
+    "authority_impersonation_score",
+    "call_to_action_score",
+    "phishing_indicator_sum"
+  ],
+  "datasets": [
+    "CEAS_08.csv",
+    "Enron.csv",
+    "Ling.csv",
+    "Nazario.csv",
+    "Nigerian_Fraud.csv",
+    "SpamAssasin.csv",
+    "TREC_05.csv",
+    "TREC_06.csv",
+    "TREC_07.csv"
+  ],
+  "source_counts": {
+    "TREC_06.csv": 15317,
+    "SpamAssasin.csv": 5450,
+    "CEAS_08.csv": 37581,
+    "TREC_07.csv": 51664,
+    "Enron.csv": 28362,
+    "TREC_05.csv": 52520,
+    "Ling.csv": 2655,
+    "Nigerian_Fraud.csv": 3332,
+    "Nazario.csv": 1565
+  },
+  "class_balance": {
+    "phishing": 99223,
+    "legitimate": 99223
+  },
+  "scale_pos_weight": 1.0,
+  "dataset_size": 198446,
+  "deduplicated": true,
+  "class_balanced": true
+}

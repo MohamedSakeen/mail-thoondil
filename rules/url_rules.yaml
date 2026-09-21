@@ -1,0 +1,31 @@
+# URL Rules
+# These rules analyze URLs for phishing indicators.
+
+rules:
+  - id: URL-Y001
+    category: url
+    severity: 0.9
+    risk_contribution: 15
+    condition: "urls[*].features.is_ip_address"
+    explanation: "A URL uses an IP address instead of a domain."
+
+  - id: URL-Y002
+    category: url
+    severity: 0.8
+    risk_contribution: 10
+    condition: "urls[*].features.has_punycode"
+    explanation: "A URL contains a punycode domain label."
+
+  - id: URL-Y003
+    category: url
+    severity: 0.6
+    risk_contribution: 6
+    condition: "urls[*].features.shortener_detected"
+    explanation: "A URL uses a URL shortening service."
+
+  - id: URL-Y004
+    category: url
+    severity: 0.85
+    risk_contribution: 12
+    condition: "urls[*].features.has_at_symbol"
+    explanation: "A URL contains an @ symbol, which can mask the real destination."

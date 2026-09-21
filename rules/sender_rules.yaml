@@ -1,0 +1,31 @@
+# Sender Rules
+# These rules analyze sender identity for impersonation.
+
+rules:
+  - id: SND-Y001
+    category: sender
+    severity: 0.8
+    risk_contribution: 12
+    condition: "headers.reply_to_mismatch"
+    explanation: "Reply-To domain differs from the sender domain."
+
+  - id: SND-Y002
+    category: sender
+    severity: 0.7
+    risk_contribution: 8
+    condition: "headers.return_path_mismatch"
+    explanation: "Return-Path domain differs from the sender domain."
+
+  - id: SND-Y003
+    category: sender
+    severity: 0.5
+    risk_contribution: 5
+    condition: "headers.message_id_domain_mismatch"
+    explanation: "Message-ID domain differs from the sender domain."
+
+  - id: SND-Y005
+    category: sender
+    severity: 0.6
+    risk_contribution: 6
+    condition: "headers.display_name_from_mismatch"
+    explanation: "Display name does not match the sender domain."

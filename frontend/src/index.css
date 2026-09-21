@@ -1,0 +1,333 @@
+/* ========================================
+   mail thoondil - Color Theme
+   Palette: #0b0d10  #171c22  #2a333d  #5d6f82  #e7eef5
+   ======================================== */
+
+:root {
+  /* Core palette */
+  --bg-primary: #0b0d10;
+  --bg-secondary: #171c22;
+  --bg-card: #171c22;
+  --bg-card-hover: #2a333d;
+  --border: #2a333d;
+  --text-primary: #e7eef5;
+  --text-secondary: #5d6f82;
+  --text-muted: #5d6f82;
+
+  /* Accent colors (semantic, for status indicators) */
+  --accent-blue: #5b8def;
+  --accent-green: #34d399;
+  --accent-yellow: #fbbf24;
+  --accent-red: #f87171;
+  --accent-purple: #a78bfa;
+  --accent-orange: #fb923c;
+
+  /* Shared values */
+  --radius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--accent-blue);
+  text-decoration: none;
+}
+
+/* ---- Layout ---- */
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ---- Sidebar ---- */
+
+.sidebar {
+  width: 240px;
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--border);
+  padding: 20px 0;
+  flex-shrink: 0;
+}
+
+.sidebar-title {
+  padding: 0 20px 20px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.5px;
+}
+
+.sidebar nav a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  color: var(--text-secondary);
+  transition: all 0.2s;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+  color: var(--text-primary);
+  background: var(--bg-card-hover);
+}
+
+.sidebar nav a.active {
+  border-left: 3px solid var(--accent-blue);
+  padding-left: 17px;
+}
+
+/* ---- Main Content ---- */
+
+.main-content {
+  flex: 1;
+  padding: 30px;
+  max-width: 1200px;
+  overflow-y: auto;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+h2 {
+  font-size: 18px;
+  margin-bottom: 16px;
+  color: var(--text-secondary);
+}
+
+/* ---- Card ---- */
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+/* ---- Upload Zone ---- */
+
+.upload-zone {
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 60px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.upload-zone:hover {
+  border-color: var(--accent-blue);
+  background: rgba(91, 141, 239, 0.05);
+}
+
+.upload-zone.dragging {
+  border-color: var(--accent-blue);
+  background: rgba(91, 141, 239, 0.1);
+}
+
+/* ---- Buttons ---- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background: var(--accent-blue);
+  color: #0b0d10;
+}
+
+.btn-primary:hover {
+  background: #4a7de0;
+}
+
+.btn-primary:disabled {
+  background: #2a333d;
+  color: #5d6f82;
+  cursor: not-allowed;
+}
+
+/* ---- Score Ring ---- */
+
+.score-ring {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0 auto 16px;
+}
+
+.score-benign {
+  background: rgba(52, 211, 153, 0.12);
+  color: var(--accent-green);
+  border: 3px solid var(--accent-green);
+}
+
+.score-suspicious {
+  background: rgba(251, 191, 36, 0.12);
+  color: var(--accent-yellow);
+  border: 3px solid var(--accent-yellow);
+}
+
+.score-high_suspicious {
+  background: rgba(251, 146, 60, 0.12);
+  color: var(--accent-orange);
+  border: 3px solid var(--accent-orange);
+}
+
+.score-phishing {
+  background: rgba(248, 113, 113, 0.12);
+  color: var(--accent-red);
+  border: 3px solid var(--accent-red);
+}
+
+/* ---- Badge ---- */
+
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.badge-benign {
+  background: rgba(52, 211, 153, 0.12);
+  color: var(--accent-green);
+}
+
+.badge-suspicious {
+  background: rgba(251, 191, 36, 0.12);
+  color: var(--accent-yellow);
+}
+
+.badge-high_suspicious {
+  background: rgba(251, 146, 60, 0.12);
+  color: var(--accent-orange);
+}
+
+.badge-phishing {
+  background: rgba(248, 113, 113, 0.12);
+  color: var(--accent-red);
+}
+
+/* ---- Signals ---- */
+
+.signal-list {
+  list-style: none;
+}
+
+.signal-item {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.signal-item:last-child {
+  border-bottom: none;
+}
+
+.signal-explanation {
+  flex: 1;
+}
+
+.signal-category {
+  color: var(--text-muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-right: 16px;
+}
+
+.signal-risk {
+  font-weight: 600;
+  font-size: 14px;
+  min-width: 60px;
+  text-align: right;
+}
+
+/* ---- Table ---- */
+
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+th {
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+/* ---- Loading ---- */
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: var(--text-muted);
+}
+
+.spinner {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 3px solid var(--border);
+  border-top-color: var(--accent-blue);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---- Empty State ---- */
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-muted);
+}
