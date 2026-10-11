@@ -1,85 +1,74 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { History } from "lucide-react";
+import React, { useState, useEffect, useMemo } from "react";
+import LoadingSpinner from "../components/ui/LoadingSpinner";
+import HistoryFilterBar from "../components/history/HistoryFilterBar";
+import HistoryTable from "../components/history/HistoryTable";
 import { listAnalyses, type AnalysisListItem } from "../api";
 
-export default function HistoryPage() {
+export const HistoryPage: React.FC = () => {
   const [analyses, setAnalyses] = useState<AnalysisListItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedFilter, setSelectedFilter] = useState("all");
+
   useEffect(() => {
-    listAnalyses()
+    listAnalyses(100, 0)
       .then(setAnalyses)
       .catch((err) => setError(err.message))
       .finally(() => setLoading(false));
   }, []);
 
+  const filteredAnalyses = useMemo(() => {
+    return analyses.filter((item) => {
+      // Classification filter
+      if (selectedFilter !== "all") {
+        const norm = (item.classification || "").toLowerCase().replace(/\s+/g, "_");
+        if (norm !== selectedFilter) return false;
+      }
+
+      // Search query filter
+      if (searchQuery.trim()) {
+        const q = searchQuery.toLowerCase();
+        const subjectMatch = (item.subject || "").toLowerCase().includes(q);
+        const idMatch = (item.analysis_id || "").toLowerCase().includes(q);
+        if (!subjectMatch && !idMatch) return false;
+      }
+
+      return true;
+    });
+  }, [analyses, selectedFilter, searchQuery]);
+
+  const handleExportJSON = () => {
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(filteredAnalyses, null, 2));
+    const downloadAnchor = document.createElement("a");
+    downloadAnchor.setAttribute("href", dataStr);
+    downloadAnchor.setAttribute("download", `phishing_analysis_history_${Date.now()}.json`);
+    document.body.appendChild(downloadAnchor);
+    downloadAnchor.click();
+    downloadAnchor.remove();
+  };
+
   if (loading) {
-    return (
-      <div className="loading">
-        <div className="spinner" />
-        <p style={{ marginTop: 12 }}>Loading history...</p>
-      </div>
-    );
+    return <LoadingSpinner label="Loading analysis history log..." />;
   }
 
   return (
-    <>
-      <h1>
-        <History size={24} style={{ display: "inline", marginRight: 8 }} />
-        Analysis History
-      </h1>
-      <h2>Recent email analyses</h2>
+    <div className="history-page">
+      {error && <div className="error-banner mb-4">{error}</div>}
 
-      {error && (
-        <div className="card" style={{ color: "var(--accent-red)" }}>
-          {error}
-        </div>
-      )}
+      <HistoryFilterBar
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+        selectedFilter={selectedFilter}
+        setSelectedFilter={setSelectedFilter}
+        onExport={handleExportJSON}
+        totalCount={filteredAnalyses.length}
+      />
 
-      {analyses.length === 0 ? (
-        <div className="empty-state">
-          <p>No analyses yet. Upload an email to get started.</p>
-        </div>
-      ) : (
-        <div className="card">
-          <div className="table-container">
-            <table>
-              <thead>
-                <tr>
-                  <th>Subject</th>
-                  <th>Classification</th>
-                  <th>Risk Score</th>
-                  <th>Date</th>
-                </tr>
-              </thead>
-              <tbody>
-                {analyses.map((a) => (
-                  <tr key={a.analysis_id}>
-                    <td>
-                      <Link to={`/result/${a.analysis_id}`}>
-                        {a.subject || "(no subject)"}
-                      </Link>
-                    </td>
-                    <td>
-                      <span className={`badge badge-${a.classification}`}>
-                        {a.classification}
-                      </span>
-                    </td>
-                    <td style={{ fontWeight: 600 }}>{a.risk_score.toFixed(1)}</td>
-                    <td style={{ color: "var(--text-muted)" }}>
-                      {a.created_at
-                        ? new Date(a.created_at).toLocaleString()
-                        : "—"}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      )}
-    </>
+      <HistoryTable items={filteredAnalyses} />
+    </div>
   );
-}
+};
+
+export default HistoryPage;

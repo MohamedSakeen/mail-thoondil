@@ -1,38 +1,36 @@
-import { Routes, Route, Link, useLocation } from "react-router-dom";
-import { Upload, History, Shield } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+import Sidebar from "./components/layout/Sidebar";
+import Header from "./components/layout/Header";
+import DashboardPage from "./pages/DashboardPage";
 import UploadPage from "./pages/UploadPage";
 import HistoryPage from "./pages/HistoryPage";
 import ResultPage from "./pages/ResultPage";
+import { listAnalyses } from "./api";
 
 export default function App() {
-  const location = useLocation();
+  const [analysisCount, setAnalysisCount] = useState<number>(0);
 
-  const isActive = (path: string) =>
-    location.pathname === path ? "active" : "";
+  useEffect(() => {
+    listAnalyses(100, 0)
+      .then((items) => setAnalysisCount(items.length))
+      .catch(() => {});
+  }, []);
 
   return (
     <div className="layout">
-      <aside className="sidebar">
-        <div className="sidebar-title">
-          <Shield size={20} style={{ display: "inline", marginRight: 8 }} />
-          mail thoondil
-        </div>
-        <nav>
-          <Link to="/" className={isActive("/")}>
-            <Upload size={18} /> Analyze
-          </Link>
-          <Link to="/history" className={isActive("/history")}>
-            <History size={18} /> History
-          </Link>
-        </nav>
-      </aside>
-      <main className="main-content">
-        <Routes>
-          <Route path="/" element={<UploadPage />} />
-          <Route path="/history" element={<HistoryPage />} />
-          <Route path="/result/:id" element={<ResultPage />} />
-        </Routes>
-      </main>
+      <Sidebar analysisCount={analysisCount} />
+      <div className="main-wrapper">
+        <Header />
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<DashboardPage />} />
+            <Route path="/upload" element={<UploadPage />} />
+            <Route path="/history" element={<HistoryPage />} />
+            <Route path="/result/:id" element={<ResultPage />} />
+          </Routes>
+        </main>
+      </div>
     </div>
   );
 }
